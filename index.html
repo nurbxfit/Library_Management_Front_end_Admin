@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/main.css" />
+    
+</head>
+
+<body>
+    <header>
+        <div class="header-brand">
+            <img src="images/logolib.png" alt="logo">
+            <h3>Social Engagement Center</h3>
+        </div>
+    </header>
+    <nav class="side-menu">
+            <ul id='side-menu'>
+                <li data-link="main.htm" class="sidemenu-item active">
+                    <span class="fa fa-home"></span> Dashboard</li>
+                <li data-link="books.htm" class="sidemenu-item ">
+                    <span class="fa fa-book"></span> Books
+                </li>
+                <li data-link="borrowed.htm" class="sidemenu-item">
+                    <span class="fa fa-book"></span> Borrowed Books</li>
+                <li data-link="event.htm" class="sidemenu-item">
+                    <span class="fa fa-calendar"></span>
+                    Events</li>
+                <li data-link="enquiry.htm" class="sidemenu-item">
+                    <span class="fa fa-sticky-note-o"></span>
+                    Enquiry</li>
+                <li data-link="settings.htm" class="sidemenu-item nav-dropdown">
+                    <span class="fa fa-gear"></span>
+                    Site Management
+                    <ul class='nav-content'>
+                        <li>Info</li>
+                        <li>Guide</li>
+                        <li>Banner</li>
+                        <li>Library</li>
+                        <li>Link</li>
+                        <li>Users List</li>
+                    </ul>
+                </li>
+                <li>
+                    <span class="fa fa-sign-out"></span>
+                    Log Out</li>
+            </ul>
+        </nav>
+    <main>
+        <h1>Library DMS | Books Information</h1>
+        <div id="mainBoard" class="content grid-card">
+            
+        </div>
+ 
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

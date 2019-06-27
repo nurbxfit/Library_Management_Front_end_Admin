@@ -1,0 +1,113 @@
+<div class="book-container">
+    <h1 id='add-book' class="md-heading">Add Book</h1>
+
+    <div class="form-container">
+        <form action="" class="add-form">
+                
+                <input class="form-control" name="title" id="title" type="text" placeholder="Book Title">
+                <input class="form-control" name="author" id="author" type="text" placeholder="Author Name">
+                <input class="form-control" name="publisher" id="publisher" type="text" placeholder="Publisher">
+                <input class="form-control" name="isbn" id="isbn" type="text" placeholder="ISBN">
+                <input type="text" name="synopsis" id="synopsis" placeholder="synopsis">
+                <label for="location">Location</label>
+                <select name="location" id="location" default='location'>
+                    <option value="">Fiction</option>
+                    <option value="">Non-Fiction</option>
+                    <option value="">Children</option>
+                    <option value="">Others</option>
+                </select>
+                <label for="category">Category</label>
+                <select name="category" id="category">
+                    <option value="">Fiction</option>
+                    <option value="">Non-Fiction</option>
+                    <option value="">Children</option>
+                    <option value="">Others</option>
+                </select>
+
+                <textarea name="synopsis" id="synopsis" cols="30" rows="10"></textarea>
+
+                <label for="image">Image</label>
+                <input type="file" name="image" id="image">
+                <br>
+                <button type="submit">Add Book</button>
+
+        </form>
+    </div>
+
+    <div class="list-container">
+        <ul class="hr-nav">
+            <li class="active" data-links="book-list" >Books List</li>
+            <li data-links="category-list">Category List</li>
+            <li data-links="author-list">Author List</li>
+        </ul>
+
+        <div id="book-list" class="content-container visible">
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Book Title</th>
+                    <th>ISBN</th>
+                    <th>Location</th>
+                    <th>Category</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Test Book</td>
+                    <td>123456</td>
+                    <td>Balai Tun Sadun</td>
+                    <td>Fiksion</td>
+                    <td>x</td>
+                    <td>x</td>
+
+                </tr>
+            </table>
+        </div>
+        <div id="category-list" class="content-container">
+            <table>
+                <tr>
+                    <th>#</th>
+                    <th>Category</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Fiksion</td>
+                </tr>
+            </table>
+        </div>
+        <div id="author-list" class="content-container">
+
+        </div>
+    </div>
+
+</div>
+
+<script>
+
+var visibility = false;
+var hrNav = document.querySelector('.hr-nav');
+
+document.getElementById('add-book').addEventListener('click',()=>{
+    if(visibility){
+        visibility = false;
+        document.querySelector('.form-container').classList.remove('visible');
+    }else{
+        visibility = true;
+        document.querySelector('.form-container').classList.add('visible');
+    }
+});
+
+hrNav.childNodes.forEach(element => {
+    element.addEventListener('click',activeMe)
+});
+
+
+
+function activeMe(){
+    hrNav.querySelector('.active').classList.remove('active');
+    this.classList.add('active');
+    document.querySelector('.content-container.visible').classList.remove('visible')
+    document.getElementById(this.getAttribute('data-links')).classList.add('visible');
+}
+</script>
